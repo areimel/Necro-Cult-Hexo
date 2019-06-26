@@ -19,17 +19,25 @@
           }
       });
 
+
+/*************************************
+        HOME
+*************************************/
+    
+    var home_hero_swiper = new Swiper('.home_hero_slider', {
+        spaceBetween: 200,
+    });
   
 
-  //RANDOM QUOTE SELECTOR
-      $(function() {
-          var quotes = new Array(
-              "The Past is Alive"
-             
-              ),
-          randno = quotes[Math.floor( Math.random() * quotes.length )];
-          $('#nav_tagline').html( randno );
-      });
+	//RANDOM QUOTE SELECTOR
+	$(function() {
+		var quotes = new Array(
+			"The Past is Alive"
+
+		),
+		randno = quotes[Math.floor( Math.random() * quotes.length )];
+		$('#nav_tagline').html( randno );
+	});
 
 
   //ALBUM ART CREDIT
