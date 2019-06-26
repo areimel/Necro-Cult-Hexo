@@ -1,0 +1,38 @@
+/***************
+****************
+RESOURCES
+
+FONTS
+  font-family: 'OldEnglish', cursive;
+  font-family: 'Germania One', cursive;
+  font-family: 'Source Code Pro', monospace;
+  font-family: 'Spectral', serif;
+
+
+COLORS
+  BLACK: #000;
+  WHITE: #fff;
+  RED: #fb3333;
+
+Z-INDEX
+  0-99:       General elements;
+  100-999:    Nav and other globals;
+  1000-9999:  Special cases;
+  
+VARIABLES
+  attribute: var(--variable);
+
+
+****************
+***************/
+:root {
+  --black: #222;
+  --white: #fdfdfd;
+  --red: #fb3333;
+  --grey-3: #333;
+  --grey-6: #666;
+  --old-english: 'OldEnglish', cursive;
+  --germania: 'Germania One', cursive;
+  --mono: 'Source Code Pro', monospace;
+  --serif: 'Spectral', serif;
+}
