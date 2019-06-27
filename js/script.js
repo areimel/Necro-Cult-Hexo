@@ -26,6 +26,9 @@
     
     var home_hero_swiper = new Swiper('.home_hero_slider', {
         spaceBetween: 200,
+        pagination: {
+          el: '.home_hero_slider .swiper-pagination',
+        },
     });
   
 
