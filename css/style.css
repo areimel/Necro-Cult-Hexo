@@ -186,7 +186,6 @@ PAGES
   padding: 25px 35px;
 }
 .home_1>.container {
-  overflow-x: hidden;
   display: flex;
   border-bottom: solid 1px var(--white);
 }
@@ -204,7 +203,6 @@ PAGES
 }
 .home_1>.container>.home_hero_slider {
   width: 400px;
-  overflow-x: hidden;
   position: relative;
 }
 .home_1 .swiper-slide>article {
@@ -213,6 +211,9 @@ PAGES
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+.home_1 .swiper-wrapper {
+  overflow-x: hidden;
 }
 /***** copy *****/
 .home_1 .swiper-slide>article>.copy {
