@@ -4,43 +4,91 @@
 
 //MAIN JS CODE
 
+/*************************************
+        Global Elements
+*************************************/
   
+  //NAV
 
-  //NAV BUTTONS
-    $('.menu_button').click(function(){
-          if($('.body_wrapper').hasClass('active')){
-              $(this).removeClass('active');
-              $('.body_wrapper').removeClass('active');
-              $('nav').removeClass('active');
-          }else{
-              $(this).addClass('active');
-              $('.body_wrapper').addClass('active');
-              $('nav').addClass('active');
-          }
-      });
+    //HEADROOM - HEADER
+            $("#header").headroom({
+              "offset": 0,
+              "tolerance": 25,
+            });
+    
+    //NAV BUTTONS
+      $('.menu_button').click(function(){
+            if($('.body_wrapper').hasClass('active')){
+                $(this).removeClass('active');
+                $('.body_wrapper').removeClass('active');
+                $('#nav').removeClass('active');
+            }else{
+                $(this).addClass('active');
+                $('.body_wrapper').addClass('active');
+                $('#nav').addClass('active');
+            }
+        });
 
+
+
+  //STICKY SIDEBAR
+    if($('.sticky_sidebar').length){
+      console.log('sticky sidebar');
+      
+      /*$('.blog_get_results').click(function(e) {
+        setTimeout(function(){
+          sticky_sidebar.duration($('.blog_sidebar').height() - 420);
+        }, 750);
+
+      })*/
+      
+      var controller = new ScrollMagic.Controller();
+
+      var sticky_sidebar = new ScrollMagic.Scene({
+        triggerElement: ".sticky_sidebar",
+        triggerHook: 'onLeave', 
+        offset: -100,
+        duration: $('.sticky_sidebar').height() - 750
+        //loglevel: 3,
+      })
+        
+        //.setClassToggle(".sticky_sidebar", "active") // trigger a TweenMax.to tween
+        .setPin(".sticky_sidebar")
+        .addTo(controller);
+      
+    }
 
 /*************************************
-        HOME
+        PAGES
 *************************************/
+  /*************************************
+          HOME
+  *************************************/
+      
+      var home_hero_swiper = new Swiper('.home_hero_slider', {
+          spaceBetween: 200,
+          pagination: {
+            el: '.home_hero_slider .swiper-pagination',
+          },
+          speed: 500,
+          autoplay: {
+              delay: 5000,
+            },
+      });
     
-    var home_hero_swiper = new Swiper('.home_hero_slider', {
-        spaceBetween: 200,
-        pagination: {
-          el: '.home_hero_slider .swiper-pagination',
-        },
-    });
-  
 
-	//RANDOM QUOTE SELECTOR
-	$(function() {
-		var quotes = new Array(
-			"The Past is Alive"
+  	//RANDOM QUOTE SELECTOR
+  	$(function() {
+  		var quotes = new Array(
+  			"The Past is Alive",
+        "Death To False Metal",
+        "Brothers of Steel"
 
-		),
-		randno = quotes[Math.floor( Math.random() * quotes.length )];
-		$('#nav_tagline').html( randno );
-	});
+
+  		),
+  		randno = quotes[Math.floor( Math.random() * quotes.length )];
+  		$('#nav_tagline').html( randno );
+  	});
 
 
   //ALBUM ART CREDIT
@@ -79,6 +127,31 @@
 
 
 
+
+      //ACHIEVEMENT CODE
+
+          /****
+           * Example HTML:
+           * <a class="button achievement" data-title="Achievement Getter" data-description="You have unlocked you first achievement." data-icon='<i class="fas fa-ring"></i>'>Achievement Get</a>
+           * 
+           * Icons: https://fontawesome.com/icons?d=gallery&c=gaming-tabletop,halloween,music&m=free 
+           * 
+           */
+          $('.achievement').click(function(){
+              var title = $(this).data('title');
+              var description = $(this).data('description');
+              var icon = $(this).data('icon');
+              
+              $('#achievement_notification .title').text(title);
+              $('#achievement_notification .description').text(description);
+              $('#achievement_notification .icon>.inner').html(icon);
+              
+              $('#achievement_notification').addClass('active');
+              setTimeout(function () { 
+                      $('#achievement_notification').removeClass('active');
+              }, 8000);
+               
+          });
 
 
 

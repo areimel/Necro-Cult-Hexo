@@ -26,7 +26,7 @@ VARIABLES
 ****************
 ***************/
 :root {
-  --black: #222;
+  --black: #111;
   --white: #fdfdfd;
   --red: #fb3333;
   --grey-3: #333;
@@ -35,4 +35,7 @@ VARIABLES
   --germania: 'Germania One', cursive;
   --mono: 'Source Code Pro', monospace;
   --serif: 'Spectral', serif;
+  --short-transition: 0.25s ease-in-out;
+  --medium-transition: 0.5s ease-in-out;
+  --long-transition: 0.75 ease-in-out;
 }
