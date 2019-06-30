@@ -1,0 +1,21 @@
+/***** ------------ *****/
+/***** PREVIEW FEED *****/
+/***** ------------ *****/
+@media only screen and (max-width: 1200px) {
+  .article_preview {
+    flex-direction: column;
+  }
+  .article_preview.mobile_reverse {
+    flex-direction: column-reverse;
+  }
+  .article_preview .copy {
+    width: 100%;
+  }
+  .article_preview .image {
+    padding-top: 50px;
+    padding-left: 0px;
+  }
+}
+/***** ----- *****/
+/***** PAGES *****/
+/***** ----- *****/

@@ -20,7 +20,7 @@ header {
   padding: 25px 35px;
   height: 120px;
   border-bottom: solid 3px var(--white);
-  background: #000;
+  background: var(--black);
   transition: 0.25s;
 }
 header .logo {
@@ -37,7 +37,7 @@ header .logo {
 }
 header .logo:hover {
   color: var(--white);
-  text-shadow: 1px 1px #fb3333, 2px 2px #fb3333, 3px 3px #fb3333, 4px 4px #fb3333, 5px 5px #fb3333;
+  text-shadow: 1px 1px var(--red), 2px 2px var(--red), 3px 3px var(--red), 4px 4px var(--red), 5px 5px var(--red);
 }
 header .menu_button {
   margin-right: 50px;
@@ -135,7 +135,7 @@ footer {
   justify-content: space-between;
   padding: 20px 35px;
   border-top: solid 3px var(--white);
-  background-color: #000;
+  background-color: var(--black);
 }
 footer .logo {
   font-family: 'OldEnglish', cursive;
@@ -203,7 +203,32 @@ PAGES
 }
 .home_1>.container>.home_hero_slider {
   width: 400px;
+  overflow-x: hidden;
+  overflow-y: hidden;
   position: relative;
+  box-sizing: border-box;
+  padding: 15px 35px;
+}
+.home_1>.container>.home_hero_slider h2 {
+  margin-bottom: 35px;
+}
+.home_1>.container>.home_hero_slider .swiper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home_1>.container>.home_hero_slider .swiper-pagination .swiper-pagination-bullet {
+  background-color: var(--white);
+  width: 10px;
+  height: 10px;
+  transition: 0.25s ease-in-out;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.home_1>.container>.home_hero_slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--red);
+  width: 15px;
+  height: 15px;
 }
 .home_1 .swiper-slide>article {
   width: 100%;
@@ -211,9 +236,6 @@ PAGES
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-}
-.home_1 .swiper-wrapper {
-  overflow-x: hidden;
 }
 /***** copy *****/
 .home_1 .swiper-slide>article>.copy {
@@ -252,8 +274,8 @@ PAGES
   transition-timing-function: ease-in-out;
 }
 .home_1 .swiper-slide>article>.copy .title:hover h1 {
-  text-shadow: 0 0 1vw #fb3333, 0 0 3vw #fb3333, 0 0 10vw #fb3333, 0 0 10vw #fb3333, 0 0 0.4vw #fb3333;
-  color: #000;
+  text-shadow: 0 0 1vw var(--red), 0 0 3vw var(--red), 0 0 10vw var(--red), 0 0 10vw var(--red), 0 0 0.4vw var(--red);
+  color: var(--black);
 }
 /***** image *****/
 .home_1 .swiper-slide>article>.image {
